@@ -47,7 +47,8 @@
             </ul>
           <% end %>
 
-          <%= form_with model: [@prototype, @comment], local: true do |f| %>
+          <%= form_with model: [@prototype, @comment], data: { turbo: false } do |f| %>
+
             <div class="field">
               <%= f.label :text, "コメント" %><br />
               <%= f.text_field :text, id: "comment_content" %>
