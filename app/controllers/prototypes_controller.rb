@@ -33,7 +33,7 @@ class PrototypesController < ApplicationController
     if @prototype.update(prototype_params)
       redirect_to prototype_path(@prototype), notice: "更新が完了しました"
     else
-      render :edit, alert: "更新に失敗しました"
+      render :edit
     end
   end
 
