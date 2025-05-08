@@ -10,7 +10,8 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to prototype_path(@prototype)
     else
-      render 'prototypes/show' # ←これで詳細ページに戻る！
+      @comments = @prototype.comments.includes(:user)
+      render 'prototypes/show'
     end
   end
 
